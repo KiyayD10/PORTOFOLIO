@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from "./components/Hero";
 import "./index.css";
 import About from './components/About';
+import Skills from './components/Skills';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Skills />
     </div>
   );
 }

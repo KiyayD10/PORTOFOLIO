@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import html from "../assets/skills/html.png";
-import css from "../assets/skills/css.png";
-import js from "../assets/skills/javascript.jpg";
-import php from "../assets/skills/php.png";
-import ts from "../assets/skills/typescript.png";
-import bootstrap from "../assets/skills/bootstrap.png";
-import laravel from "../assets/skills/laravel.png";
-import tailwind from "../assets/skills/tailwind.png";
-import react from "../assets/skills/react.png";
-import nodejs from "../assets/skills/nodejs.png";
-import python from "../assets/skills/python.jpg";
-import kotlin from "../assets/skills/kotlin.jpg";
-import csharp from "../assets/skills/csahrp.png";
-import unity from "../assets/skills/unity.png";
-import blender from "../assets/skills/blender.png";
+import html from "../assets/skills/html.svg";
+import css from "../assets/skills/css.svg";
+import js from "../assets/skills/javascript.svg";
+import php from "../assets/skills/php.svg";
+import ts from "../assets/skills/typescript.svg";
+import bootstrap from "../assets/skills/bootstrap.svg";
+import laravel from "../assets/skills/laravel.svg";
+import tailwind from "../assets/skills/tailwind.svg";
+import react from "../assets/skills/react.svg";
+import nodejs from "../assets/skills/nodejs.svg";
+import python from "../assets/skills/python.svg";
+import kotlin from "../assets/skills/kotlin.svg";
+import csharp from "../assets/skills/csharp.svg";
+import unity from "../assets/skills/unity.svg";
+import blender from "../assets/skills/blender.svg";
 
 const Skills = () => {
     const [activeTab, setActiveTab] = useState("skills");
@@ -58,7 +58,7 @@ const Skills = () => {
         switch (activeTab) {
             case "skills":
                 return(
-                    <div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-6">
                         {skills.map((s, i) => (
                             <motion.div
                             key={i}
@@ -66,16 +66,17 @@ const Skills = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: i * 0.1 }}
+                            className="flex flex-col items-center p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:scale-105 transition"
                             >
-                                <img src={s.logo} alt={s.name} />
-                                <p>{s.name}</p>
+                                <img src={s.logo} alt={s.name} className="w-12 h-12 mb-2" />
+                                <p className="text-sm font-medium">{s.name}</p>
                             </motion.div>
                         ))}
                     </div>
                 );
             case "certificates":
                 return(
-                    <div>
+                    <div className="grid sm:grid-cols-2 gap-6 mt-6">
                         {certificates.map((c, i) => (
                             <motion.div
                             key={i}
@@ -83,16 +84,17 @@ const Skills = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: i * 0.1 }}
+                            className="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:scale-[1.02] transition"
                             >
-                                <img src={c.img} alt={c.title} />
-                                <p>{c.title}</p>
+                                <img src={c.img} alt={c.title} className="rounded-lg w-full" />
+                                <p className="mt-2 text-center font-medium">{c.title}</p>
                             </motion.div>
                         ))}
                     </div>
                 );
             case "projects":
                 return(
-                    <div>
+                    <div className="grid sm:grid-cols-2 gap-6 mt-6">
                         {projects.map((p, i) => (
                             <motion.div
                             key={i}
@@ -100,9 +102,10 @@ const Skills = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: i * 0.1 }}
+                            className="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md hover:scale-[1.02] transition"
                             >
-                                <img src={p.img} alt={p.title} />
-                                <p>{p.title}</p>
+                                <img src={p.img} alt={p.title} className="rounded-lg w-full" />
+                                <p className="mt-2 text-center font-medium">{p.title}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -111,20 +114,20 @@ const Skills = () => {
     };
 
     return(
-        <section>
-            <h2>Skills / Certificates / Projects</h2>
-
-            <div>
+        <section  id="skills" className="py-20 px-6 md:px-12 bg-gray-50 dark:bg-gray-900">
+            <h2 className="text-3xl font-bold text-center">Skills / Certificates / Projects</h2>
+            <div className="flex justify-center mt-6 space-x-4">
                 {tabs.map((tab) => (
                     <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
+                    className={`px-4 py-2 rounded-lg font-medium transition ${activeTab === tab.id ? "bg-futuristic-500 text-white shadow-md" : "bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"}`}
                     >
                         {tab.label}
                     </button>
                 ))}
             </div>
-            <div>{renderContent()}</div>
+            <div className="mt-8">{renderContent()}</div>
         </section>
     );
 };
