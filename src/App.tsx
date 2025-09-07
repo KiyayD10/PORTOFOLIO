@@ -4,6 +4,8 @@ import "./index.css";
 import About from './components/About';
 import Skills from './components/Skills';
 import Gallery from './components/Gallery';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
       <About />
       <Skills />
       <Gallery />
+      <Contact />
+      <Footer />
     </div>
   );
 }
