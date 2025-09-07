@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className="max-w-6xl mx-auto px-6 flex justify-between items-center py-4">
                 <h1 className="text-2xl font-bold text-futuristic-500">Portfolio</h1>
                 <ul className="hidden md:flex space-x-6">
-                    {["Home", "About", "Skills", "Certificates", "Projects", "Gallery", "Contact"].map((item) => (
+                    {["Home", "About", "Skills", "Gallery", "Contact"].map((item) => (
                         <li key={item}>
                             <Link
                             to={item.toLocaleLowerCase()}
