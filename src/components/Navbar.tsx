@@ -1,38 +1,42 @@
 import { Link } from "react-scroll";
-import { useState } from "react";
-import { Moon, Sun } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
-    const [darkMode, setDarkMode] = useState(true);
-
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-        document.documentElement.classList.toggle("dark", !darkMode);
-    };
-
     return(
-        <nav className="fixed top-0 left-0 w-full bg-black/60 dark:bg-white/60 backdrop-blur-md z-50 shadow-md">
+        <motion.nav 
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md z-50 border-b border-cyan-500/30"
+        >
             <div className="max-w-6xl mx-auto px-6 flex justify-between items-center py-4">
-                <h1 className="text-2xl font-bold text-futuristic-500">Portfolio</h1>
-                <ul className="hidden md:flex space-x-6">
+                <motion.h1 
+                    whileHover={{ scale: 1.05 }}
+                    className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
+                >
+                    PORTFOLIO
+                </motion.h1>
+                <ul className="hidden md:flex space-x-8">
                     {["Home", "About", "Skills", "Gallery", "Contact"].map((item) => (
-                        <li key={item}>
+                        <motion.li 
+                            key={item}
+                            whileHover={{ y: -2 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                        >
                             <Link
-                            to={item.toLocaleLowerCase()}
-                            smooth={true}
-                            duration={500}
-                            className="cursor-pointer hover:text-futuristic-500 transition"
+                                to={item.toLowerCase()}
+                                smooth={true}
+                                duration={500}
+                                className="cursor-pointer text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group text-sm font-medium uppercase tracking-wider"
                             >
                                 {item}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
                             </Link>
-                        </li>
+                        </motion.li>
                     ))}
                 </ul>
-                <button onClick={toggleDarkMode} className="ml-6">
-                    {darkMode ? <Sun className="text-yellow-400" /> : <Moon className="text-futuristic-500" />}
-                </button>
             </div>
-        </nav>
+        </motion.nav>
     );
 };
 
