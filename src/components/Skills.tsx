@@ -1,21 +1,26 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import html from "../assets/skills/html.svg";
-import css from "../assets/skills/css.svg";
-import js from "../assets/skills/javascript.svg";
-import php from "../assets/skills/php.svg";
-import ts from "../assets/skills/typescript.svg";
-import bootstrap from "../assets/skills/bootstrap.svg";
-import laravel from "../assets/skills/laravel.svg";
-import tailwind from "../assets/skills/tailwind.svg";
-import react from "../assets/skills/react.svg";
-import nodejs from "../assets/skills/nodejs.svg";
-import python from "../assets/skills/python.svg";
-import kotlin from "../assets/skills/kotlin.svg";
-import csharp from "../assets/skills/csharp.svg";
-import unity from "../assets/skills/unity.svg";
-import blender from "../assets/skills/blender.svg";
+const skillIcons = Object.entries(
+    import.meta.glob("../assets/skills/*.{svg,png,jpg,jpeg}", { eager: true })
+).map(([path, mod]: [string, any]) => {
+    const name = path.split("/").pop()?.split(".")[0] || "";
+    return { name, logo: mod.default };
+});
+
+const certificates = Object.entries(
+    import.meta.glob("../assets/certificates/*.{svg,png,jpg,jpeg}", { eager: true })
+).map(([path, mod]: [string, any]) => {
+    const title = path.split("/").pop()?.split(".")[0] || "";
+    return { title, img: mod.default };
+});
+
+const projects = Object.entries(
+    import.meta.glob("../assets/projects/*.{svg,png,jpg,jpeg}", { eager: true })
+).map(([path, mod]: [string, any]) => {
+    const title = path.split("/").pop()?.split(".")[0] || "";
+    return { title, img: mod.default };
+});
 
 const Skills = () => {
     const [activeTab, setActiveTab] = useState("skills");
@@ -26,40 +31,12 @@ const Skills = () => {
         { id: "projects", label: "Projects" },
     ];
 
-    const skills = [
-        { name: "HTML", logo:  html},
-        { name: "CSS", logo:  css},
-        { name: "JavaScript", logo:  js},
-        { name: "PHP", logo:  php},
-        { name: "TypeScript", logo:  ts},
-        { name: "Bootstrap", logo:  bootstrap},
-        { name: "Laravel", logo:  laravel},
-        { name: "TailWind", logo:  tailwind},
-        { name: "React", logo:  react},
-        { name: "Node.Js", logo:  nodejs},
-        { name: "Python", logo:  python},
-        { name: "Kotlin", logo:  kotlin},
-        { name: "C#", logo:  csharp},
-        { name: "Unity", logo:  unity},
-        { name: "Blender", logo:  blender},
-    ];
-
-    const certificates = [
-        { title: "Dicoding Front-End Web", img: "" },
-        { title: "Sololearn JS", img: "" },
-    ];
-
-    const projects = [
-        { title: "Portfolio Website", img: "" },
-        { title: "Game 2D Unity", img: "" },
-    ];
-
     const renderContent = () => {
         switch (activeTab) {
             case "skills":
                 return(
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-6">
-                        {skills.map((s, i) => (
+                        {skillIcons.map((s, i) => (
                             <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 20 }}

@@ -1,11 +1,9 @@
 import { useState } from "react"
 import { motion } from "framer-motion";
 
-const images = [
-    "/src/assets/gallery/gallery1.jpg",
-    "/src/assets/gallery/gallery2.jpg",
-    "/src/assets/gallery/gallery3.jpg",
-];
+const images = Object.values(
+    import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,svg}", { eager: true })
+).map((img: any) => img.default);
 
 const Gallery = () => {
     const [selected, setSelected] = useState<string | null>(null);
