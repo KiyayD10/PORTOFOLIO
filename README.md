@@ -1,69 +1,68 @@
-# React + TypeScript + Vite
+Portofolio Pribadi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Selamat datang di repositori portofolio pribadi saya! 
+Ini adalah situs portofolio yang dibangun menggunakan React, TypeScript, dan Vite. Tujuan dari proyek ini adalah untuk menampilkan keterampilan dan proyek-proyek yang telah saya kerjakan, serta memberikan gambaran tentang pengalaman saya sebagai seorang pengembang.
 
-Currently, two official plugins are available:
+Teknologi yang Digunakan :
+-React – Library JavaScript untuk membangun antarmuka pengguna.
+-TypeScript – Superset JavaScript yang menambahkan tipe statis.
+-Vite – Build tool yang cepat dan ringan.
+-Tailwind CSS – Framework CSS utilitas untuk desain yang responsif.
+-ESLint – Alat untuk memastikan kode tetap konsisten dan bebas dari kesalahan.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Cara Menjalankan Proyek Ini Secara Lokal
 
-## Expanding the ESLint configuration
+Klon repositori ini:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+>git clone https://github.com/KiyayD10/PORTOFOLIO.git
+>cd PORTOFOLIO
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Instal dependensi:
+>npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Jalankan aplikasi:
+>npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Aplikasi akan tersedia di http://localhost:5173
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Struktur Folder:
+PORTOFOLIO/
+├── node_modules/        # Dependensi npm
+├── public/              # File statis seperti index.html, favicon
+├── src/                 # Kode sumber aplikasi
+│   ├── assets/          # Sertifikat, Gallery, Skills
+│   ├── components/      # Komponen UI reusable
+│   ├── App.tsx          # Root component
+│   ├── main.tsx         # Entry point aplikasi React
+│   ├── index.css        # Style global
+│   └── vite-env.d.ts    # Deklarasi TypeScript untuk Vite
+├── .gitignore
+├── download-logo.js     # Script utility untuk download logo
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── tailwind.config.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+Keterangan:
+-assets/ → Semua media pendukung tampilan.
+-components/ → Tempat semua UI component yang bisa digunakan ulang (Button, Navbar, Card, dll.).
+-src/ → Semua kode utama React.
+-File seperti download-logo.js adalah script tambahan utility.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Fitur Utama
+1. Desain Responsif: Antarmuka yang menyesuaikan dengan berbagai ukuran layar.
+2. Navigasi Halaman: Menu navigasi untuk berpindah antar bagian portofolio.
+3. Bagian Proyek: Menampilkan proyek-proyek yang telah saya kerjakan lengkap dengan deskripsi dan tautan demo.
+4. Kontak: Formulir kontak untuk menghubungi saya langsung.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Hubungi Saya:
+- Email    : robanidiansyah8@gmail.com
+- LinkedIn : https://www.linkedin.com/in/robani-diansyah-8b20082a6/
+- Instagram: robani_d10
+
+📄 Lisensi
+Proyek ini dilisensikan di bawah MIT License.
