@@ -25,33 +25,6 @@ Jalankan aplikasi:
 
 Aplikasi akan tersedia di http://localhost:5173
 
-Struktur Folder:
-PORTOFOLIO/
-├── node_modules/        # Dependensi npm
-├── public/              # File statis seperti index.html, favicon
-├── src/                 # Kode sumber aplikasi
-│   ├── assets/          # Sertifikat, Gallery, Skills
-│   ├── components/      # Komponen UI reusable
-│   ├── App.tsx          # Root component
-│   ├── main.tsx         # Entry point aplikasi React
-│   ├── index.css        # Style global
-│   └── vite-env.d.ts    # Deklarasi TypeScript untuk Vite
-├── .gitignore
-├── download-logo.js     # Script utility untuk download logo
-├── eslint.config.js
-├── index.html
-├── package.json
-├── package-lock.json
-├── tailwind.config.ts
-├── tsconfig.app.json
-├── tsconfig.json
-├── tsconfig.node.json
-└── vite.config.ts
-Keterangan:
--assets/ → Semua media pendukung tampilan.
--components/ → Tempat semua UI component yang bisa digunakan ulang (Button, Navbar, Card, dll.).
--src/ → Semua kode utama React.
--File seperti download-logo.js adalah script tambahan utility.
 
 Fitur Utama
 1. Desain Responsif: Antarmuka yang menyesuaikan dengan berbagai ukuran layar.
