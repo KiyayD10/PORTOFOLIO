@@ -38,4 +38,4 @@ Hubungi Saya:
 - Instagram: robani_d10
 
 📄 Lisensi
-Proyek ini dilisensikan di bawah MIT License.
+MIT © 2025 – Open Source
