@@ -41,6 +41,10 @@ const Hero = () => {
                             2000,
                             "// Game Developer",
                             2000,
+                            "// Software Developer",
+                            2000,
+                            "// CyberSecurity Enthusiast",
+                            2000,
                         ]}
                         wrapper="span"
                         speed={50}

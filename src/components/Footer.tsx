@@ -36,9 +36,19 @@ const Footer = () => {
                                 ROBANI DIANSYAH
                             </span>
                         </h3>
-                        <p className="text-gray-400 text-sm uppercase tracking-wider">
-                            <span className="text-cyan-400 font-mono">//</span> Full-Stack & Game Developer
-                        </p>
+                        <div className="text-gray-400 text-sm uppercase tracking-wider space-y-1 mx-auto w-fit">
+                            {[
+                                "Full-Stack Developer",
+                                "Software Engineer",
+                                "Game Developer",
+                                "Cybersecurity Enthusiast",
+                            ].map((role, index) => (
+                                <div key={index} className="grid grid-cols-[auto,1fr] gap-2 justify-center">
+                                    <span className="text-cyan-400 font-mono"></span>
+                                    <span  className="ml-2">{role}</span>
+                                </div>
+                            ))}
+                        </div>
                     </motion.div>
 
                     <motion.div
@@ -56,7 +66,7 @@ const Footer = () => {
                         transition={{ delay: 0.5, duration: 0.6 }}
                         className="flex flex-wrap justify-center gap-4 mb-8"
                     >
-                        {["React", "TypeScript", "Unity", "Blender", "Node.js", "TailwindCSS"].map(
+                        {["React", "TypeScript", "Unity", "NextJs", "PostgreSQL", "TailwindCSS"].map(
                             (tech) => (
                                 <motion.span
                                     key={tech}

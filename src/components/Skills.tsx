@@ -1,23 +1,25 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+type ImageModule = { default: string };
+
 const skillIcons = Object.entries(
-    import.meta.glob("../assets/skills/*.{svg,png,jpg,jpeg}", { eager: true })
-).map(([path, mod]: [string, any]) => {
+    import.meta.glob<ImageModule>("../assets/skills/*.{svg,png,jpg,jpeg}", { eager: true })
+).map(([path, mod]) => {
     const name = path.split("/").pop()?.split(".")[0] || "";
     return { name, logo: mod.default };
 });
 
 const certificates = Object.entries(
-    import.meta.glob("../assets/certificates/*.{svg,png,jpg,jpeg}", { eager: true })
-).map(([path, mod]: [string, any]) => {
+    import.meta.glob<ImageModule>("../assets/certificates/*.{svg,png,jpg,jpeg}", { eager: true })
+).map(([path, mod]) => {
     const title = path.split("/").pop()?.split(".")[0] || "";
     return { title, img: mod.default };
 });
 
 const projects = Object.entries(
-    import.meta.glob("../assets/projects/*.{svg,png,jpg,jpeg}", { eager: true })
-).map(([path, mod]: [string, any]) => {
+    import.meta.glob<ImageModule>("../assets/projects/*.{svg,png,jpg,jpeg}", { eager: true })
+).map(([path, mod]) => {
     const title = path.split("/").pop()?.split(".")[0] || "";
     return { title, img: mod.default };
 });

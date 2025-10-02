@@ -2,9 +2,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
+type ImageModule = { default: string };
+
 const images = Object.values(
-    import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,svg}", { eager: true })
-).map((img: any) => img.default);
+    import.meta.glob<ImageModule>("../assets/gallery/*.{jpg,jpeg,png,svg}", { eager: true })
+).map((img) => img.default);
 
 const Gallery = () => {
     const [selected, setSelected] = useState<string | null>(null);
