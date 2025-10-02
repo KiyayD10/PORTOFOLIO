@@ -21,7 +21,9 @@ const logos = {
     csharp: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
     unity: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
     blender: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.sv" +
-            "g"
+            "g",
+    postgresql: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    nextjs: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
 };
 
 const dir = path.resolve("src/assets/skills");
