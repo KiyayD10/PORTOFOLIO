@@ -13,15 +13,21 @@ Teknologi yang Digunakan :
 Cara Menjalankan Proyek Ini Secara Lokal
 
 Klon repositori ini:
-
->git clone https://github.com/KiyayD10/PORTOFOLIO.git
->cd PORTOFOLIO
-
+```
+git clone https://github.com/KiyayD10/PORTOFOLIO.git
+```
+```
+cd PORTOFOLIO
+```
 Instal dependensi:
->npm install
+```
+npm install
+```
 
 Jalankan aplikasi:
->npm run dev
+```
+npm run dev
+```
 
 Aplikasi akan tersedia di http://localhost:5173
 
