@@ -29,8 +29,6 @@ Jalankan aplikasi:
 npm run dev
 ```
 
-Aplikasi akan tersedia di http://localhost:5173
-
 
 Fitur Utama
 1. Desain Responsif: Antarmuka yang menyesuaikan dengan berbagai ukuran layar.
